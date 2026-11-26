@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVOS - Yetkazib berish</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <button class="brand" id="brand-btn" aria-label="Bosh sahifa">
+      <span class="brand-mark">EVOS</span>
+    </button>
+    <nav class="header-actions">
+      <button class="location-btn" id="location-btn">
+        <span class="pin">⌖</span>
+        <span>Yetkazib berish</span>
+      </button>
+      <button class="icon-btn" id="cart-header-btn" aria-label="Savatcha">
+        <span>🛒</span>
+        <b id="cart-count">0</b>
+      </button>
+      <button class="admin-btn" id="admin-open-btn">Admin</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Issiq va mazali</p>
+        <h1>Sevimli taomingizni tanlang</h1>
+        <p>Tez yetkazib berish • 30 daqiqa ichida</p>
+      </div>
+      <div class="hero-burger" aria-hidden="true">
+        <div class="burger">
+          <span class="bun top"></span>
+          <span class="lettuce"></span>
+          <span class="cheese"></span>
+          <span class="patty"></span>
+          <span class="bun bottom"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <div class="section-heading">
+        <h2>Menyular</h2>
+        <div class="categories" id="categories">
+          <button class="category active" data-category="all">Hammasi</button>
+          <button class="category" data-category="burger">Burgerlar</button>
+          <button class="category" data-category="lavash">Lavashlar</button>
+          <button class="category" data-category="donar">Donarlar</button>
+          <button class="category" data-category="drink">Ichimliklar</button>
+        </div>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Buyurtma</h2>
+      <button class="close-btn" id="cart-close-btn" aria-label="Yopish">×</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <form class="checkout-form" id="checkout-form">
+      <label>
+        Telefon raqam
+        <input id="phone" type="tel" inputmode="tel" placeholder="+998 90 123 45 67" required>
+      </label>
+      <label>
+        Yetkazib berish manzili
+        <input id="address" type="text" placeholder="Ko'cha, uy, kvartira" required>
+      </label>
+      <div class="cart-total">
+        <span>Jami</span>
+        <strong id="cart-total">0 so'm</strong>
+      </div>
+      <button class="order-btn" type="submit">Buyurtma berish</button>
+    </form>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <dialog id="admin-dialog">
+    <form method="dialog" class="dialog-card" id="admin-login-form">
+      <button class="dialog-close" value="cancel" aria-label="Yopish">×</button>
+      <div class="dialog-logo">EVOS</div>
+      <h2>Admin kirish</h2>
+      <input id="admin-password" type="password" placeholder="Parol" autocomplete="current-password">
+      <p class="dialog-error" id="admin-error"></p>
+      <button class="order-btn" id="admin-login-btn" type="submit">Kirish</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
